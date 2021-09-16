@@ -1,174 +1,255 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Time tracking dashboard</title>
+:root{
+    --Blue: hsl(246, 80%, 60%);
+    --Lightorange : hsl(15, 100%, 70%);
+    --Softblue : hsl(195, 74%, 62%);
+    --Lightred : hsl(348, 100%, 68%);
+    --Limegreen : hsl(145, 58%, 55%);
+    --Violet : hsl(264, 64%, 52%);
+    --Softorange : hsl(43, 84%, 65%);
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <main class="wrapper">
+    --Verydarkblue: hsl(226, 43%, 10%);
+    --Darkblue: hsl(235, 46%, 20%);
+    --Desaturatedblue: hsl(235, 45%, 61%);
+    --PaleBlue: hsl(236, 100%, 87%);
+}
+html{
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: var(--Verydarkblue);
+    display: grid;
+    place-items: center;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    height: 100vh;
+}
 
-    <section class="container user--container">
-      <div class="upper--container up-1">
-        <figure class="user--photo">
-          <img src="images/image-jeremy.png" alt="">
-        </figure>
-        <div class="user--info">
-          <p class="pale">Report for</p>
-          <h1>Jeremy Robson</h1>
-        </div>
-      </div>
+/* container */
 
-      <div class="downward--container dw-1">
-        <nav class="time">
-          <ul>
-            <li class="active">Daily</li>
-            <li class="active">Weekly</li>
-            <li class="active">Monthly</li>
-          </ul>
-        </nav>
-      </div>
-    </section>
+.container{
+    background-color: var(--Darkblue);
+    margin: 1rem;
+    border-radius: 15px;
+    width: 100%;
+    position: relative;
+}
+.upper--container{
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+}
+.downward--container{
+    padding:1rem  1.5rem;
+    border-radius: 15px;
+    transition: 400ms ease-in-out;
+}
+.activitie--container .upper--container{
+    position: relative;
+    z-index: 1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-position: 92% center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
+.activitie--container .downward--container{
+    position: relative;
+    margin-top: -1rem;
+    z-index: 5;
+    background-color: inherit;
 
-    <section class="activities">
-      <section class="container activitie--container">
-        <div class="upper--container up-2">
-  
-        </div>
-  
-        <div class="downward--container">
-          <div class="up">
-            <p class="action">Work</p>
-            <figure class="menu--display">
-              <img src="images/icon-ellipsis.svg" alt="">
-            </figure>
-          </div>
-          <div class="down">
-            <h1 class="hrs-current">32hrs</h1>
-            <p>Previous -<span class="last">  36hrs</span>
-            </p>
-          </div>
-        </div>
-      </section>
-  
-      <section class="container activitie--container">
-        <div class="upper--container up-3">
-  
-        </div>
-  
-        <div class="downward--container">
-          <div class="up">
-            <p class="action">Play</p>
-            <figure class="menu--display">
-              <img src="images/icon-ellipsis.svg" alt="">
-            </figure>
-          </div>
-          <div class="down">
-            <h1 class="hrs-current">10hrs</h1>
-            <p>Previous -<span class="last"> 8hrs</span>
-            </p>
-          </div>
-        </div>
-      </section>
-  
-      <section class="container activitie--container">
-        <div class="upper--container up-4">
-  
-        </div>
-  
-        <div class="downward--container">
-          <div class="up">
-            <p class="action">Study</p>
-            <figure class="menu--display">
-              <img src="images/icon-ellipsis.svg" alt="">
-            </figure>
-          </div>
-          <div class="down">
-            <h1 class="hrs-current">4hrs</h1>
-            <p>Previous -<span class="last"> 7hrs</span>
-            </p>
-          </div>
-        </div>
-      </section>
-  
-      <section class="container activitie--container">
-        <div class="upper--container up-5">
-  
-        </div>
-  
-        <div class="downward--container">
-          <div class="up">
-            <p class="action">exercise</p>
-            <figure class="menu--display">
-              <img src="images/icon-ellipsis.svg" alt="">
-            </figure>
-          </div>
-          <div class="down">
-            <h1 class="hrs-current">4hrs</h1>
-            <p>Previous -<span class="last"> 5hrs</span>
-            </p>
-          </div>
-        </div>
-      </section>
-  
-      <section class="container activitie--container">
-        <div class="upper--container up-6">
-  
-        </div>
-  
-        <div class="downward--container">
-          <div class="up">
-            <p class="action">Social</p>
-            <figure class="menu--display">
-              <img src="images/icon-ellipsis.svg" alt="">
-            </figure>
-          </div>
-          <div class="down">
-            <h1 class="hrs-current">5hrs</h1>
-            <p>Previous -<span class="last"> 10hrs</span>
-            </p>
-          </div>
-        </div>
-      </section>
-  
-      <section class="container activitie--container">
-        <div class="upper--container up-7">
-  
-        </div>
-  
-        <div class="downward--container">
-          <div class="up">
-            <p class="action">Self-Care</p>
-            <figure class="menu--display">
-              <img src="images/icon-ellipsis.svg" alt="">
-            </figure>
-          </div>
-          <div class="down">
-            <h1 class="hrs-current">2hrs</h1>
-            <p>Previous -<span class="last"> 2hrs</span>
-            </p>
-          </div>
-        </div>
-      </section>
-    </section>
+}
+.downward--container .up, .downward--container .down{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 0;
+}
 
-  </main>
 
-  
-  <script src="data.json"></script>
-  <script src="script.js"></script>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
-</html>
+/* container */
+
+/* container 1 */
+
+.up-1{
+    background-color: var(--Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user--photo img{
+    max-height: 70px;
+    max-width: 70px;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+.dw-1 .time ul{
+     list-style: none;
+     display: flex;
+     justify-content: space-between;
+}
+.dw-1 .time ul li{
+    color: var(--PaleBlue);
+}
+ h1{
+    font-weight: 300;
+}
+.active{
+    color: white !important;
+}
+.pale{
+    color: var(--PaleBlue)
+}
+/* container 1 */
+
+/* container 2*/
+
+.up-2{
+    background-color: var(--Lightorange);
+    background-image: url(images/icon-work.svg);
+}
+
+
+/* container 2*/
+
+
+/* container 3*/
+
+.up-3{
+    background-color: var(--Softblue);
+    background-image: url(images/icon-play.svg);
+}
+
+/* container 3*/
+
+
+/* container 4*/
+
+.up-4{
+    background-color: var(--Lightred);
+    background-image: url(images/icon-study.svg);
+}
+
+/* container 4*/
+
+/* container 5*/
+
+.up-5{
+    background-color: var(--Limegreen);
+    background-image: url(images/icon-exercise.svg);
+}
+
+/* container 5*/
+
+/* container 6*/
+
+.up-6{
+    background-color: var(--Violet);
+    background-image: url(images/icon-social.svg);
+}
+
+/* container 6*/
+
+/* container 7*/
+
+.up-7{
+    background-color: var(--Softorange);
+    background-image: url(images/icon-self-care.svg);
+}
+/* container 7*/
+
+/* media queries */
+@media (min-width:852px){
+
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .activities{
+        display: grid;
+        grid-template-columns: repeat(3,minmax(240px,1fr));
+    }
+    .container{
+        width: 240px;
+    }
+    .hrs-current{
+        font-size: 2.7rem;
+        padding: .5rem 0;
+    }
+    .downward--container .down{
+        flex-direction: column;
+        align-items: flex-start;
+       
+    }
+    .downward--container:hover{
+        background-color: var(--Desaturatedblue);
+    }
+    .dw-1:hover{
+        background-color: var(--Darkblue);
+    }
+
+
+    /* container 1 */
+
+    .up-1{
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        flex: 1;
+        height: 70%;
+    }
+    .user--photo{
+        padding-bottom: 1rem;
+    }
+    .user--info{
+        padding: 1rem 0;
+    }
+    .user--info h1{
+        font-size: 2.5rem;
+    }
+    .user--photo img{
+        max-height: 70px;
+        max-width: 70px;
+        margin-right: 0;
+        border-radius: 50%;
+        border: 3px solid white;
+        
+    }
+    .dw-1{
+        height: 30%;
+    }
+    .dw-1 .time ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .dw-1 .time ul li{
+        color: var(--PaleBlue);
+    }
+    .dw-1 .time ul li:nth-child(2){
+        padding: 1rem 0;
+    }
+    h1{
+        font-weight: 300;
+    }
+    .active{
+        color: white !important;
+    }
+    .pale{
+        color: var(--PaleBlue)
+    }
+    /* container 1 */
+
+}
+
+/* media queries */
