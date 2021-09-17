@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![screen of the proyect](/screenshot.png)
+![screen of the proyect](Screenshot.png)
 
 
 
