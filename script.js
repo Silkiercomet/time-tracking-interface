@@ -36,6 +36,7 @@ const changeTimeSpan = (x) => {
                 toggleTransitionWithTimeout(a)
                 toggleTransitionWithTimeout(currentTime[index])
                 toggleTransitionWithTimeout(prev[index])
+                prev[index].textContent = "Yesterday" 
                 a.textContent =  day.daily.previous+"hrs";
                 currentTime[index].textContent =  day.daily.current+"hrs";
             });
@@ -48,6 +49,7 @@ const changeTimeSpan = (x) => {
                 toggleTransitionWithTimeout(a)
                 toggleTransitionWithTimeout(currentTime[index])
                 toggleTransitionWithTimeout(prev[index])
+                prev[index].textContent = "Last Week" 
                 a.textContent =  day.weekly.previous+"hrs";
                 currentTime[index].textContent = day.weekly.current+"hrs";
             });
@@ -59,6 +61,7 @@ const changeTimeSpan = (x) => {
                 toggleTransitionWithTimeout(a)
                 toggleTransitionWithTimeout(currentTime[index])
                 toggleTransitionWithTimeout(prev[index])
+                prev[index].textContent = "Last Month" 
                 a.textContent =  day.monthly.previous+"hrs";
                 currentTime[index].textContent =  day.monthly.current+"hrs";
             });
@@ -83,4 +86,3 @@ function toggleTransitionWithTimeout(x) {
 time[1].addEventListener("click", function(){changeTimeSpan(1), paleButton(), whiteButton(1)})
 time[2].addEventListener("click", function(){changeTimeSpan(2), paleButton(), whiteButton(2)})
 time[3].addEventListener("click", function(){changeTimeSpan(3), paleButton(), whiteButton(3)})
-
