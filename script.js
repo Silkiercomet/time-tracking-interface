@@ -36,7 +36,7 @@ const changeTimeSpan = (x) => {
                 toggleTransitionWithTimeout(a)
                 toggleTransitionWithTimeout(currentTime[index])
                 toggleTransitionWithTimeout(prev[index])
-                prev[index].textContent = "Last Month- "+ day.daily.previous+"hrs"
+                prev[index].textContent = "Yesterday- "+ day.daily.previous+"hrs"
                 currentTime[index].textContent =  day.daily.current+"hrs";
             });
 
@@ -48,7 +48,7 @@ const changeTimeSpan = (x) => {
                 toggleTransitionWithTimeout(a)
                 toggleTransitionWithTimeout(currentTime[index])
                 toggleTransitionWithTimeout(prev[index])
-                prev[index].textContent = "Last Month- "+ day.weekly.previous+"hrs"
+                prev[index].textContent = "Last Week- "+ day.weekly.previous+"hrs"
                 currentTime[index].textContent = day.weekly.current+"hrs";
             });
 
